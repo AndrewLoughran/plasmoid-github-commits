@@ -8,7 +8,7 @@
         ],
         "Category": "Development Tools",
         "Description": "View your GitHub contributions graph.",
-        "Icon": "",
+        "Icon": "Battery",
         "Id": "com.github.andrewloughran.plasmoidgithubcommits",
         "Name": "GitHub Contributions",
         "Version": "1",
