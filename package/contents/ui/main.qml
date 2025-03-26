@@ -1,6 +1,6 @@
 import QtQuick
-import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.plasmoid
 
-Rectangle {
-    color: "#0ff"
+PlasmoidItem {
+
 }
