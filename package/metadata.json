@@ -14,6 +14,6 @@
         "Version": "1",
         "Website": "https://github.com/AndrewLoughran/plasmoid-github-commits"
     },
-    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
     "KPackageStructure": "Plasma/Applet"
 }
