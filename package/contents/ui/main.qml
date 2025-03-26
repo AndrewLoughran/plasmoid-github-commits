@@ -5,6 +5,11 @@ import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
+//import { Octokit, App } from "https://esm.sh/octokit";
+//import "octokit.ts" as Octokit
+
+
+
 PlasmoidItem {
     // https://doc.qt.io/qt-6/qml-codingconventions.html
     id: root
@@ -36,4 +41,67 @@ PlasmoidItem {
         Text { text: "row"; font.strikeout: true }
     }
 
+    function printIt(xhrObject) {
+        console.log(xhrObject.responseText);
+    }
+
+
+
+    function doRequest(method, url, callback) {
+
+        // GraphQL query
+        const myQuery = { "query": "{user(login: \"AndrewLoughran\") { contributionsCollection { contributionCalendar { colors totalContributions weeks {contributionDays {contributionCount date}}}}}}"};
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        //xhr.onreadystatechange = (function (myxhr) {
+        //    return function () {
+        //        if (xhr.readyState === XMLHttpRequest.DONE)
+        //            callback(myxhr);
+        //    };
+        //})(xhr);
+
+        //xhr.addEventListener("load", reqListener)
+        xhr.open(method, url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Authorization", "bearer "); // personal bearer token removed to avoid Git uploading it, will abstract away later
+        xhr.onload = function () {
+            console.log('data returned:', JSON.stringify(xhr.response));
+        }
+        xhr.send(JSON.stringify(myQuery));
+    }
+
+
+
+
+    Component.onCompleted: doRequest("POST", "https://api.github.com/graphql", printIt)
+    //Component.onCompleted: console.log(JSON.stringify())
+    //Component.onCompleted: console.log(JSON.stringify({ x: 5, y: 6 }));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
