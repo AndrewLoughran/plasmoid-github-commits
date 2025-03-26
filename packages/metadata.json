@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "a.loughran@gmail.com",
+                "Name": "Andrew Loughran"
+            }
+        ],
+        "Category": "Development Tools",
+        "Description": "View your GitHub contributions graph.",
+        "Icon": "",
+        "Id": "com.github.andrewloughran.plasmoidgithubcommits",
+        "Name": "GitHub Contributions",
+        "Version": "1",
+        "Website": "https://github.com/AndrewLoughran/plasmoid-github-commits"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "KPackageStructure": "Plasma/Applet"
+}
